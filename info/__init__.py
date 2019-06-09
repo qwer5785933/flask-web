@@ -6,12 +6,16 @@ from flask.ext.session import Session
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.wtf import CSRFProtect
 from config import *
-from info.moduls.index import index_
 
-app = Flask(__name__)
+
+
+
+
 db=SQLAlchemy()
-
-
+# redis_store=None #type:StrictRedis
+redis_store = None  # type: StrictRedis
+#
+# redis_store: StrictRedis = None
 
 
 def set_up_log(u_selected_config):
@@ -31,17 +35,20 @@ def set_up_log(u_selected_config):
 
 
 def create_app(u_selected_config):
+    app = Flask(__name__)
     set_up_log(u_selected_config)
     CSRFProtect(app)
     Session(app)
+
     app.config.from_object(seleceted_config[u_selected_config])
-    app.register_blueprint(index_)
+
     db.init_app(app)
     # db = SQLAlchemy(app)
     global redis_store
+
     redis_store = redis.StrictRedis(host=My_config.REDIS_HOST, port=My_config.REDIS_PORT)
-
-
+    from info.moduls.index import index_
+    app.register_blueprint(index_)
     return app
 
 

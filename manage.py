@@ -1,12 +1,12 @@
-from info import app ,db, create_app
+from info import db, create_app
 from flask_script import Manager
 from flask_migrate import Migrate,MigrateCommand
 from config import *
 
 
 
+app=create_app('development')
 
-app_selected_config=create_app('development')
 """
 :parameter
 development':DevelopmentConfig,
@@ -14,7 +14,7 @@ development':DevelopmentConfig,
 'testing':TestingConfig
 """
 
-manager = Manager(app_selected_config)
+manager = Manager(app)
 Migrate(app, db)
 manager.add_command('db', MigrateCommand)
 
