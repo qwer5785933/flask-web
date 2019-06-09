@@ -1,7 +1,6 @@
 import redis
 
 class My_config(object):
-
      SQLALCHEMY_DATABASE_URI='mysql://python:mysql@127.0.0.1:3306/flask_programe'
      # SQLALCHEMY_TRACK_MODIFICATIONS=False
      SQLALCHEMY_TRACK_MODIFICATIONS=False

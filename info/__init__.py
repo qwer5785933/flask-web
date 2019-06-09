@@ -6,9 +6,16 @@ from flask.ext.wtf import CSRFProtect
 from config import *
 
 app = Flask(__name__)
+db=SQLAlchemy()
 
-CSRFProtect(app)
-Session(app)
-app.config.from_object(seleceted_config['development'])
-db = SQLAlchemy(app)
-redis_store = redis.StrictRedis(host=My_config.REDIS_HOST, port=My_config.REDIS_PORT)
+def create_app(u_selected_config):
+    CSRFProtect(app)
+    Session(app)
+    app.config.from_object(seleceted_config[u_selected_config])
+    db.init_app(app)
+    # db = SQLAlchemy(app)
+    global redis_store
+    redis_store = redis.StrictRedis(host=My_config.REDIS_HOST, port=My_config.REDIS_PORT)
+
+
+    return app
