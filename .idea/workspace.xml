@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ad9fe31-bd59-4f3a-91ca-e0eb11bebc9b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/__init__.py" afterPath="$PROJECT_DIR$/info/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/moduls/index/views.py" afterPath="$PROJECT_DIR$/info/moduls/index/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manage.py" afterPath="$PROJECT_DIR$/manage.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -74,6 +72,7 @@
         <option value="$PROJECT_DIR$/info/__init__.py" />
         <option value="$PROJECT_DIR$/info/moduls/index/views.py" />
         <option value="$PROJECT_DIR$/manage.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -600,7 +599,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560079837092</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="增加了日志功能，在index视图函数中，尝试写入数据库操作，发现了循环导入的问题，并解决了问题">
+      <created>1560085413511</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1560085413511</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -659,7 +665,8 @@
     <MESSAGE value="config集成了3种配置模式（需要init中手动修改）" />
     <MESSAGE value="在config中把app配置封装成函数&#10;在manage.py中调用函数，传参设置" />
     <MESSAGE value="增加日志功能，在init文件中创建日志函数，&#10;并在create_app时候调用，产生日志文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加日志功能，在init文件中创建日志函数，&#10;并在create_app时候调用，产生日志文件" />
+    <MESSAGE value="增加了日志功能，在index视图函数中，尝试写入数据库操作，发现了循环导入的问题，并解决了问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加了日志功能，在index视图函数中，尝试写入数据库操作，发现了循环导入的问题，并解决了问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1038,6 +1045,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-725">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1518">
+          <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
           <folding />
         </state>
       </provider>
