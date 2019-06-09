@@ -1,7 +1,7 @@
 import redis
 
 class My_config(object):
-     DEBUG=True
+
      SQLALCHEMY_DATABASE_URI='mysql://python:mysql@127.0.0.1:3306/flask_programe'
      # SQLALCHEMY_TRACK_MODIFICATIONS=False
      SQLALCHEMY_TRACK_MODIFICATIONS=False
@@ -14,3 +14,22 @@ class My_config(object):
      SESSION_USE_SIGNER = True  # 让 cookie 中的 session_id 被加密签名处理
      SESSION_REDIS = redis.StrictRedis(host=REDIS_HOST, port=REDIS_PORT)  # 使用 redis 的实例
      PERMANENT_SESSION_LIFETIME = 86400  # session 的有效期，单位是秒
+
+
+
+class DevelopmentConfig(My_config):
+     DEBUG = True
+
+class ProductionConfig(My_config):
+     DEBUG = False
+
+class TestingConfig(My_config):
+     DEBUG = True
+     TESTING=True
+
+
+seleceted_config={
+     'development':DevelopmentConfig,
+     'production':ProductionConfig,
+     'testing':TestingConfig
+}
