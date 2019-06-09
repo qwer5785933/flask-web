@@ -1,4 +1,5 @@
 import redis
+import logging
 
 class My_config(object):
      SQLALCHEMY_DATABASE_URI='mysql://python:mysql@127.0.0.1:3306/flask_programe'
@@ -16,15 +17,22 @@ class My_config(object):
 
 
 
+
+
 class DevelopmentConfig(My_config):
      DEBUG = True
+     LOG_LEVEL=logging.DEBUG
+
 
 class ProductionConfig(My_config):
      DEBUG = False
+     LOG_LEVEL = logging.ERROR
 
 class TestingConfig(My_config):
      DEBUG = True
      TESTING=True
+     LOG_LEVEL = logging.DEBUG
+
 
 
 seleceted_config={
