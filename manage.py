@@ -1,4 +1,4 @@
-from info import db, create_app
+from info import db, create_app,models
 from flask_script import Manager
 from flask_migrate import Migrate,MigrateCommand
 from config import *

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDataSourceStorage">
+    <option name="dataSources">
+      <list>
+        <State>
+          <option name="id" value="668a4a2d-945d-44bd-b4cb-592af61d18fc" />
+          <option name="name" value="informationinfonews" />
+          <option name="urls">
+            <array>
+              <option value="file://$PROJECT_DIR$/../../demotest/informationinfonews.sql" />
+            </array>
+          </option>
+        </State>
+      </list>
+    </option>
+  </component>
+</project>
