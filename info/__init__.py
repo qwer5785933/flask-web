@@ -8,9 +8,6 @@ from flask.ext.wtf import CSRFProtect
 from config import *
 
 
-
-
-
 db=SQLAlchemy()
 # redis_store=None #type:StrictRedis
 redis_store = None  # type: StrictRedis
@@ -48,7 +45,10 @@ def create_app(u_selected_config):
 
     redis_store = redis.StrictRedis(host=My_config.REDIS_HOST, port=My_config.REDIS_PORT)
     from info.moduls.index import index_
+    from info.moduls.passport import passport_
+
     app.register_blueprint(index_)
+    app.register_blueprint(passport_)
     return app
 
 

@@ -1,3 +1,5 @@
+from flask import render_template
+
 from info import redis_store
 from . import index_
 
@@ -7,4 +9,4 @@ def hello_world():
     print(redis_store.get('name').decode())
     print(1)
 
-    return 'Hello World!'
+    return render_template('news/index.html')
