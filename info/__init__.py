@@ -10,7 +10,7 @@ from config import *
 
 db=SQLAlchemy()
 # redis_store=None #type:StrictRedis
-redis_store = None  # type: StrictRedis
+redis_store = None  # type:StrictRedis
 #
 # redis_store: StrictRedis = None
 
