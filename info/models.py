@@ -57,8 +57,20 @@ class User(BaseModel, db.Model):
 
     # 当前用户所发布的新闻
     news_list = db.relationship('News', backref='user', lazy='dynamic')
+    password=""
 
+    @property
+    def password(self):
+        raise PassWordException('密码不能直接被获取')
 
+    # 设置加密的方法,传入密码,对类属性进行操作
+    @password.setter
+    def password(self, value):
+        self.password_hash = generate_password_hash(value)
+
+    # 设置验证密码的方法
+    def check_password(self, user_pwd):
+        return check_password_hash(self.password_hash, user_pwd)
 
     def to_dict(self):
         resp_dict = {

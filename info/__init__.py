@@ -1,10 +1,12 @@
 from logging.handlers import RotatingFileHandler
 
 import redis
-from flask import Flask
+from flask import Flask, app
 from flask.ext.session import Session
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.wtf import CSRFProtect
+from flask.ext.wtf.csrf import generate_csrf
+
 from config import *
 
 
@@ -34,10 +36,21 @@ def set_up_log(u_selected_config):
 def create_app(u_selected_config):
     app = Flask(__name__)
     set_up_log(u_selected_config)
-    CSRFProtect(app)
-    Session(app)
+
 
     app.config.from_object(seleceted_config[u_selected_config])
+
+    @app.after_request
+    def after_request(response):
+        # 调用函数生成 csrf_token
+        csrf_token = generate_csrf()
+        # 通过 cookie 将值传给前端
+        response.set_cookie("csrf_token", csrf_token)
+        return response
+
+
+    # CSRFProtect(app)
+    Session(app)
 
     db.init_app(app)
     # db = SQLAlchemy(app)
@@ -50,5 +63,6 @@ def create_app(u_selected_config):
     app.register_blueprint(index_)
     app.register_blueprint(passport_)
     return app
+
 
 
