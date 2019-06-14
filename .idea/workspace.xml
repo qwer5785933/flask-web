@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ad9fe31-bd59-4f3a-91ca-e0eb11bebc9b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/info/libs/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/info/libs/yuntongxun/CCPRestSDK.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/info/libs/yuntongxun/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/info/libs/yuntongxun/sms.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/info/libs/yuntongxun/xmltojson.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/info/moduls/news/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/info/moduls/news/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.py" afterPath="$PROJECT_DIR$/config.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/__init__.py" afterPath="$PROJECT_DIR$/info/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/models.py" afterPath="$PROJECT_DIR$/info/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/moduls/index/views.py" afterPath="$PROJECT_DIR$/info/moduls/index/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/moduls/passport/views.py" afterPath="$PROJECT_DIR$/info/moduls/passport/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/static/news/css/main.css" afterPath="$PROJECT_DIR$/info/static/news/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/static/news/js/main.js" afterPath="$PROJECT_DIR$/info/static/news/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info/templates/news/index.html" afterPath="$PROJECT_DIR$/info/templates/news/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manage.py" afterPath="$PROJECT_DIR$/manage.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -665,7 +649,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560239253497</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="实现啦登录注册模块的功能，主页登录，主页退出，主页注册，CSRF保护（请求钩子）">
+      <created>1560515078231</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1560515078231</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -760,7 +751,8 @@
     <MESSAGE value="增加了数据库表的建立，再MYSQL中添加了测试数据，增加了static文件夹（内含模板，css，js，pic）" />
     <MESSAGE value="完成了首页的模板渲染" />
     <MESSAGE value="验证码前半段逻辑实现（完成验证码的发送和redis数据库的存储，并设置过期时间）" />
-    <option name="LAST_COMMIT_MESSAGE" value="验证码前半段逻辑实现（完成验证码的发送和redis数据库的存储，并设置过期时间）" />
+    <MESSAGE value="实现啦登录注册模块的功能，主页登录，主页退出，主页注册，CSRF保护（请求钩子）" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现啦登录注册模块的功能，主页登录，主页退出，主页注册，CSRF保护（请求钩子）" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
