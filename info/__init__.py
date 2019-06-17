@@ -10,7 +10,10 @@ from flask.ext.wtf.csrf import generate_csrf
 from config import *
 
 
+
 db=SQLAlchemy()
+from info.utils.common import do_index_class, check_user
+
 # redis_store=None #type:StrictRedis
 redis_store = None  # type:StrictRedis
 #
@@ -39,7 +42,7 @@ def create_app(u_selected_config):
 
 
     app.config.from_object(seleceted_config[u_selected_config])
-
+    app.add_template_filter(do_index_class,"indexClass")
     @app.after_request
     def after_request(response):
         # 调用函数生成 csrf_token
@@ -49,7 +52,7 @@ def create_app(u_selected_config):
         return response
 
 
-    # CSRFProtect(app)
+    CSRFProtect(app)
     Session(app)
 
     db.init_app(app)
@@ -59,9 +62,12 @@ def create_app(u_selected_config):
     redis_store = redis.StrictRedis(host=My_config.REDIS_HOST, port=My_config.REDIS_PORT)
     from info.moduls.index import index_
     from info.moduls.passport import passport_
+    from info.moduls.news import news_blu
+
 
     app.register_blueprint(index_)
     app.register_blueprint(passport_)
+    app.register_blueprint(news_blu)
     return app
 
 
