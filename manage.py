@@ -1,3 +1,6 @@
+#coding=utf-8
+#!/usr/bin/env python3
+
 from info import db, create_app,models
 from flask_script import Manager
 from flask_migrate import Migrate,MigrateCommand
