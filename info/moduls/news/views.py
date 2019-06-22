@@ -13,6 +13,12 @@ from info.models import News,Comment, CommentLike
 from info.utils.response_code import RET
 from . import news_blu
 
+
+
+
+
+
+
 @news_blu.route('/<int:news_id>',methods=['POST','GET'])
 @check_user
 def news_detil(news_id):

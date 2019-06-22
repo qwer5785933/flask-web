@@ -1,14 +1,15 @@
 from logging.handlers import RotatingFileHandler
 
 import redis
-from flask import Flask, app
+from flask import Flask, app, jsonify
+from flask import g
+from flask import render_template
 from flask.ext.session import Session
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.wtf import CSRFProtect
 from flask.ext.wtf.csrf import generate_csrf
 
 from config import *
-
 
 
 db=SQLAlchemy()
@@ -57,17 +58,33 @@ def create_app(u_selected_config):
 
     db.init_app(app)
     # db = SQLAlchemy(app)
+    # @app.errorhandler(404)
+    # @check_user
+    # def page_notfound(e):
+    #     user=g.user
+    #     data={
+    #         'user':user.to_dict()
+    #     }
+    #     return render_template('others/404.html',data=data)
+
+
+
+
     global redis_store
 
     redis_store = redis.StrictRedis(host=My_config.REDIS_HOST, port=My_config.REDIS_PORT)
     from info.moduls.index import index_
     from info.moduls.passport import passport_
     from info.moduls.news import news_blu
+    from info.moduls.profile import profile_blu
+    from info.moduls.admin import admin_blu
 
 
+    app.register_blueprint(profile_blu)
     app.register_blueprint(index_)
     app.register_blueprint(passport_)
     app.register_blueprint(news_blu)
+    app.register_blueprint(admin_blu)
     return app
 
 

@@ -20,7 +20,7 @@
             {% block categoryBlock %}
                 <ul class="menu fl">
                     {% for category in data.category_li %}
-                         {% if loop.index == 1 %}
+                         {% if loop.index == 2 %}
                             <li data-cid="{{ category.id }}" class="active"><a href="javascript:;">{{ category.name }}</a></li>
                          {% else %}
                             <li data-cid="{{ category.id }}"><a href="javascript:;">{{ category.name }}</a></li>
@@ -32,7 +32,7 @@
                 <!-- 用户登录后显示下面，隐藏上面 -->
                 <div class="user_login fr">
                     <img src="{% if data.user.avatar_url %}{{ data.user.avatar_url }}{% else %}../../static/news/images/person01.png{% endif %}" class="lgin_pic">
-                    <a href="#">{{ data.user.nick_name }}</a>
+                    <a href="/user/info">{{ data.user.nick_name }}</a>
                     <a href="javascript:;" onclick="logout()">退出</a>
                 </div>
 
