@@ -19,7 +19,7 @@
             <a href="/" class="logo fl"><img src="../../static/news/images/logo.png" alt="logo"></a>
             {% block categoryBlock %}
                 <ul class="menu fl">
-                    {% for category in data.category_li %}
+                    {% for category in data.categories %}
                          {% if loop.index == 2 %}
                             <li data-cid="{{ category.id }}" class="active"><a href="javascript:;">{{ category.name }}</a></li>
                          {% else %}
@@ -57,7 +57,7 @@
         </div>
         <ul class="rank_list">
             {% for new in data.news_dict_li %}
-            <li><span class="{{ loop.index0 | indexClass }}">{{ loop.index }}</span><a href="#">{{ new.title }}</a></li>
+            <li><span class="{{ loop.index0 | indexClass }}">{{ loop.index }}</span><a href="/news/{{ new.id }}">{{ new.title }}</a></li>
             {% endfor %}
         </ul>
     </div>
